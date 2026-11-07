@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Version>2.0.0</Version>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsAotCompatible>true</IsAotCompatible>
+    <OSVersionProjectPath Condition="'$(OSVersionProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../os-version/main-cs/src/SevenKeyboard.OSVersion/SevenKeyboard.OSVersion.csproj</OSVersionProjectPath>
+    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../../../library-build/main-cs/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(OSVersionProjectPath)" MinimumVersion="2.1.0" />
+  </ItemGroup>
+  <Import Project="$(LibraryBuildTargetsPath)" />
+</Project>
