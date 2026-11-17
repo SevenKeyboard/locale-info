@@ -7,7 +7,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsAotCompatible>true</IsAotCompatible>
     <OSVersionProjectPath Condition="'$(OSVersionProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../os-version/main-cs/src/SevenKeyboard.OSVersion/SevenKeyboard.OSVersion.csproj</OSVersionProjectPath>
-    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../../../library-build/main-cs/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
+    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../build/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="$(OSVersionProjectPath)" MinimumVersion="2.1.0" />

@@ -14,7 +14,9 @@ Use `string` for text, `uint` for names beginning with `I`, and `LocaleSignature
 
 Names are case-insensitive, as in the original AHK defaults. Omitted locale, `null`, `"NAME_USER_DEFAULT"`, and numeric-zero strings select the user default; `""` and `"NAME_INVARIANT"` select invariant; `"NAME_SYSTEM_DEFAULT"` selects the system default. Unknown info types fail. Original OS gates, including build 19402, are retained.
 
-Keep `locale-info/main-cs`, `os-version/main-cs` (2.x, minimum 2.1.0), and `library-build/main-cs` under one parent directory of any name. Override `OSVersionProjectPath` and `LibraryBuildTargetsPath` for another layout; dependencies stay external.
+Keep `locale-info/main-cs` and `os-version/main-cs` under a common parent.
+The bundled `build/CheckLibraryVersions.targets` checks for OSVersion 2.x,
+at least 2.1.0. Override `OSVersionProjectPath` for another layout.
 
 Build: `dotnet build src/SevenKeyboard.LocaleInfo -c Release`.
 Smoke: `dotnet run --project tests/SevenKeyboard.LocaleInfo.Smoke -c Release`.
